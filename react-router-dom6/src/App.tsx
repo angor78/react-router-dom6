@@ -21,11 +21,14 @@ function App() {
           <Route path={'/'} element={<Main/>}/>
           <Route path={'/*'} element={<Error404/>}/>
           <Route path={'/login'} element={<Login/>}/>
-          <Route path={'/profile/*'} element={<Profile/>}
-            {/*<Routes>*/}
-            {/*<Route path={'/settings'} element={<Settings/>}/>*/}
-            {/*</Routes>*/}
-
+          <Route path={'/profile/*'} element={
+            <div>
+              <Profile/>
+              <Routes>
+                <Route path={'/settings'} element={<Settings/>}/>
+              </Routes>
+            </div>
+          }/>
         </Routes>
       </header>
     </div>
